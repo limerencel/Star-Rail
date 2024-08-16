@@ -19,7 +19,9 @@ async function fetchData() {
   const lang = "cn";
   const uid = UID.value;
   try {
-    const response = await fetch(`${baseUrl}${uid}?lang=${lang}`);
+    const fetchURL = baseUrl + uid + "?lang=" + lang;
+    console.log(fetchURL);
+    const response = await fetch(fetchURL);
     if (response.ok) {
       const data = await response.json();
       return data;
